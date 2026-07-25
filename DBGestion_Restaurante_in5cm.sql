@@ -1,3 +1,4 @@
+drop database if exists DBGestion_Restaurante_in5cm;
 create database DBGestion_Restaurante_in5cm;
 use DBGestion_Restaurante_in5cm;
 
@@ -176,16 +177,16 @@ delimiter ;
 
 -- datos clientes
 
-call sp_agregar_cliente('Juan','Perez','12345678','[juan@gmail.com](mailto:juan@gmail.com)');
-call sp_agregar_cliente('Maria','Lopez','12345679','[maria@gmail.com](mailto:maria@gmail.com)');
-call sp_agregar_cliente('Carlos','Ramirez','12345670','[carlos@gmail.com](mailto:carlos@gmail.com)');
-call sp_agregar_cliente('Ana','Morales','12345671','[ana@gmail.com](mailto:ana@gmail.com)');
-call sp_agregar_cliente('Luis','Gomez','12345672','[luis@gmail.com](mailto:luis@gmail.com)');
-call sp_agregar_cliente('Sofia','Hernandez','12345673','[sofia@gmail.com](mailto:sofia@gmail.com)');
-call sp_agregar_cliente('Pedro','Diaz','12345674','[pedro@gmail.com](mailto:pedro@gmail.com)');
-call sp_agregar_cliente('Lucia','Castillo','12345675','[lucia@gmail.com](mailto:lucia@gmail.com)');
-call sp_agregar_cliente('Jose','Ruiz','12345676','[jose@gmail.com](mailto:jose@gmail.com)');
-call sp_agregar_cliente('Elena','Vega','12345677','[elena@gmail.com](mailto:elena@gmail.com)');
+call sp_agregar_cliente('Juan','Perez','12345678','juan@gmail.com');
+call sp_agregar_cliente('Maria','Lopez','12345679','maria@gmail.com ');
+call sp_agregar_cliente('Carlos','Ramirez','12345670','carlos@gmail.com');
+call sp_agregar_cliente('Ana','Morales','12345671','ana@gmail.com');
+call sp_agregar_cliente('Luis','Gomez','12345672','luis@gmail.com');
+call sp_agregar_cliente('Sofia','Hernandez','12345673','sofia@gmail.com');
+call sp_agregar_cliente('Pedro','Diaz','12345674','pedro@gmail.com');
+call sp_agregar_cliente('Lucia','Castillo','12345675','lucia@gmail.com');
+call sp_agregar_cliente('Jose','Ruiz','12345676','jose@gmail.com');
+call sp_agregar_cliente('Elena','Vega','12345677','elena@gmail.com');
 
 -- ==========================================
 -- procedimientos almacenados tabla mesa
@@ -307,7 +308,7 @@ in p_nombre varchar(50),
 in p_apellido varchar(50),
 in p_cargo varchar(30),
 in p_telefono varchar(8),
-in p_email varchar(30)
+in p_email varchar(50)
 )
 begin
 update Empleados
@@ -357,16 +358,16 @@ delimiter ;
 
 -- datos empleados
 
-call sp_agregar_empleado('Miguel','Garcia','Mesero','22334455','[miguel@gmail.com](mailto:miguel@gmail.com)');
-call sp_agregar_empleado('Laura','Perez','Cajero','22334456','[laura@gmail.com](mailto:laura@gmail.com)');
-call sp_agregar_empleado('Diego','Lopez','Chef','22334457','[diego@gmail.com](mailto:diego@gmail.com)');
-call sp_agregar_empleado('Andrea','Ruiz','Mesero','22334458','[andrea@gmail.com](mailto:andrea@gmail.com)');
-call sp_agregar_empleado('Mario','Diaz','Chef','22334459','[mario@gmail.com](mailto:mario@gmail.com)');
-call sp_agregar_empleado('Patricia','Santos','Gerente','22334460','[patricia@gmail.com](mailto:patricia@gmail.com)');
-call sp_agregar_empleado('Kevin','Mendez','Mesero','22334461','[kevin@gmail.com](mailto:kevin@gmail.com)');
-call sp_agregar_empleado('Rosa','Morales','Cajero','22334462','[rosa@gmail.com](mailto:rosa@gmail.com)');
-call sp_agregar_empleado('Jorge','Ramirez','Chef','22334463','[jorge@gmail.com](mailto:jorge@gmail.com)');
-call sp_agregar_empleado('Claudia','Vega','Mesero','22334464','[claudia@gmail.com](mailto:claudia@gmail.com)');
+call sp_agregar_empleado('Miguel','Garcia','Mesero','22334455','miguel@gmail.com');
+call sp_agregar_empleado('Laura','Perez','Cajero','22334456','laura@gmail.com');
+call sp_agregar_empleado('Diego','Lopez','Chef','22334457','diego@gmail.com');
+call sp_agregar_empleado('Andrea','Ruiz','Mesero','22334458','andrea@gmail.com');
+call sp_agregar_empleado('Mario','Diaz','Chef','22334459','mario@gmail.com');
+call sp_agregar_empleado('Patricia','Santos','Gerente','22334460','patricia@gmail.com');
+call sp_agregar_empleado('Kevin','Mendez','Mesero','22334461','kevin@gmail.com');
+call sp_agregar_empleado('Rosa','Morales','Cajero','22334462','rosa@gmail.com');
+call sp_agregar_empleado('Jorge','Ramirez','Chef','22334463','jorge@gmail.com');
+call sp_agregar_empleado('Claudia','Vega','Mesero','22334464','claudia@gmail.com');
 
 -- ==========================================
 -- procedimientos almacenados tabla reserva
