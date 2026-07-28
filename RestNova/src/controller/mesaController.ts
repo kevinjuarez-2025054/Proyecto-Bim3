@@ -26,7 +26,7 @@ export class MesaController{
     static async obtenerMesas(req: IncomingMessage, res: ServerResponse){
         const mesa = await service.obtenerMesas;
         res.writeHead(200);
-        res.end(JSON.stringify(mesa))
+        res.end(JSON.stringify(mesa));
     }
 
     static async obtenerMesaPorId(req: IncomingMessage, res: ServerResponse, id: number){
