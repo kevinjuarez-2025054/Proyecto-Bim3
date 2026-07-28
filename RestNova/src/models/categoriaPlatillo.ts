@@ -8,5 +8,5 @@ enum CategoriaPlatillo {
 
 export interface CategoriaPlatilloModel {
     id_categoria: number;
-    nombre_categoria: CategoriaPlatillo;
+    categoria_platillo: CategoriaPlatillo;
 }

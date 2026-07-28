@@ -2,7 +2,7 @@ import { Factura } from "../models/factura";
 
 export class FacturaValidation {
     static validate(factura: Factura): void {
-        if (!factura.fecha || isNaN(factura.fecha.getTime())) {
+        if (!factura.fecha || factura.fecha.trim() === " ") {
             throw new Error("La fecha es obligatoria y debe ser una fecha válida");
         }
 

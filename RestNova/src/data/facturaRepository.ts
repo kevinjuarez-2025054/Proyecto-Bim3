@@ -10,7 +10,7 @@ export class FacturaRepository {
 
     async obtenerFacturaPorId(id: number): Promise<Factura | undefined> {
         const [rows] = await connection.query<RowDataPacket[]>(
-            "SELECT * FROM factura WHERE id_factura = ?", [id]
+            "SELECT * FROM factura WHERE numero_factura = ?", [id]
         );
         return rows[0] as Factura | undefined;
     }
@@ -25,7 +25,7 @@ export class FacturaRepository {
 
     async actualizarFactura(id: number, factura: Factura): Promise<Factura | undefined> {
         const [result] = await connection.query<ResultSetHeader>(
-            "UPDATE factura SET fecha = ?, Subtotal = ?, iva = ?, total = ?, numero_pedido = ?, id_platillo = ?, id_detalle_pedido = ? WHERE id_factura = ?",
+            "UPDATE factura SET fecha = ?, Subtotal = ?, iva = ?, total = ?, numero_pedido = ?, id_platillo = ?, id_detalle_pedido = ? WHERE numero_factura = ?",
             [factura.fecha, factura.subtotal, factura.iva, factura.total, factura.numero_pedido, factura.id_platillo, factura.id_detalle_pedido, id]
         );
         return result.affectedRows > 0 ? factura : undefined;
@@ -33,7 +33,7 @@ export class FacturaRepository {
 
     async eliminarFactura(id: number): Promise<boolean> {
         const [result] = await connection.query<ResultSetHeader>(
-            "DELETE FROM factura WHERE id_factura = ?", [id]
+            "DELETE FROM factura WHERE numero_factura = ?", [id]
         );
         return result.affectedRows > 0;
     }

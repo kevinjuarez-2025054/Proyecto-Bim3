@@ -1,6 +1,6 @@
 export interface Reserva {
     id_reserva: number;
-    fecha_reserva: Date;
+    fecha_reserva: string;
     hora: string;
     cantidad_personas: number;
     id_cliente: number;

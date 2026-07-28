@@ -47,7 +47,7 @@ export class EmpleadoController{
             res.end(JSON.stringify({ mensaje: "se agrego empleado correctamente" }));
         } catch (error: any) {
             res.writeHead(400);
-            res.end(JSON.stringify({ mensaje : error.menssage }));
+            res.end(JSON.stringify({ mensaje : error.message }));
         }
     }
 
@@ -59,7 +59,7 @@ export class EmpleadoController{
             res.end(JSON.stringify({ mensaje : "empleado actualizado correctamente" }));
         } catch (error: any) {
             res.writeHead(400);
-            res.end(JSON.stringify({ mensaje : error.menssage }));
+            res.end(JSON.stringify({ mensaje : error.message }));
         }
     }
 
@@ -70,7 +70,7 @@ export class EmpleadoController{
             res.end(JSON.stringify({ mensaje : "empleado eliminado correctamenete"}));
         } catch (error: any) {
             res.writeHead(400);
-            res.end(JSON.stringify({ mensaje : error.menssage }));
+            res.end(JSON.stringify({ mensaje : error.message }));
         }
     }
 }

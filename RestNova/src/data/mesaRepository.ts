@@ -18,7 +18,7 @@ export class MesaRepository {
 
     async crearMesa(mesa: Mesa): Promise<Mesa>{
         await connection.query<ResultSetHeader>(
-            "INSERT INTO Mesa (capasidad,estado) VALUES (?,?)",
+            "INSERT INTO Mesa (capacidad,estado) VALUES (?,?)",
             [mesa.capacidad,mesa.estado]
         );
         return mesa;

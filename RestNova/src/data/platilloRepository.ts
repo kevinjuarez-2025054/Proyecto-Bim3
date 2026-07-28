@@ -18,7 +18,7 @@ export class PlatilloRepository {
     async crearPlatillo(platillo: Platillo): Promise<Platillo> {
         await connection.query<ResultSetHeader>(
             "INSERT INTO platillo (nombre_platillo, descripcion, precio,id_categoria) VALUES (?,?,?,?)",
-            [platillo.nombre_platillo, platillo.descripcion_platillo, platillo.precio_platillo, platillo.id_categoria]
+            [platillo.nombre_platillo, platillo.descripcion, platillo.precio, platillo.id_categoria]
         );
         return platillo;
     }
@@ -26,7 +26,7 @@ export class PlatilloRepository {
     async actualizarPlatillo(id: number, platillo: Platillo): Promise<Platillo | undefined> {
         const [result] = await connection.query<ResultSetHeader>(
             "UPDATE platillo SET nombre_platillo = ?, descripcion = ?, precio = ?, id_categoria = ? WHERE id_platillo = ?",
-            [platillo.nombre_platillo, platillo.descripcion_platillo, platillo.precio_platillo, platillo.id_categoria, id]
+            [platillo.nombre_platillo, platillo.descripcion, platillo.precio, platillo.id_categoria, id]
         );
         return result.affectedRows > 0 ? platillo : undefined;
     }

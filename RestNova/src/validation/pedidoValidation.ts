@@ -2,7 +2,7 @@ import { Pedido } from "../models/pedido";
 
 export class PedidoValidation {
     static validate(pedido: Pedido): void {
-        if (!pedido.fecha || isNaN(pedido.fecha.getTime())) {
+        if (!pedido.fecha || pedido.fecha.trim() === "" ) {
             throw new Error("La fecha del pedido es obligatoria y debe ser una fecha válida");
         }
 

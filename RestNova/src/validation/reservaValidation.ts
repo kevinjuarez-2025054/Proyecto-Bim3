@@ -2,7 +2,7 @@ import { Reserva } from "../models/reserva";
 
 export class ReservaValidation {
     static validate(reserva: Reserva): void {
-        if (!reserva.fecha_reserva || isNaN(new Date(reserva.fecha_reserva).getTime())) {
+        if (!reserva.fecha_reserva || reserva.fecha_reserva.trim() === "") {
             throw new Error("La fecha de la reserva es obligatoria y debe ser una fecha válida");
         }
 

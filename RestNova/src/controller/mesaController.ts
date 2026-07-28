@@ -24,7 +24,7 @@ async function leerBody(req: IncomingMessage): Promise<any> {
 export class MesaController{
 
     static async obtenerMesas(req: IncomingMessage, res: ServerResponse){
-        const mesa = await service.obtenerMesas;
+        const mesa = await service.obtenerMesas();
         res.writeHead(200);
         res.end(JSON.stringify(mesa));
     }

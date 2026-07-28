@@ -1,4 +1,4 @@
 export enum EstadoPedido {
-    ENPROCESO = "ENPROCESO",
+    ENPROCESO = "EN PROCESO",
     ENTREGADO = "ENTREGADO"
 }

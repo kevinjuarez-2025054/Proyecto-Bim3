@@ -6,15 +6,15 @@ export class PlatilloValidation {
             throw new Error("El nombre del platillo es obligatorio");
         }
 
-        if (!platillo.descripcion_platillo || platillo.descripcion_platillo.trim() === "") {
+        if (!platillo.descripcion || platillo.descripcion.trim() === "") {
             throw new Error("La descripción del platillo es obligatoria");
         }
 
-        if (platillo.precio_platillo === undefined || platillo.precio_platillo === null) {
+        if (platillo.precio === undefined || platillo.precio === null) {
             throw new Error("El precio del platillo es obligatorio");
         }
 
-        if (typeof platillo.precio_platillo !== "number" || platillo.precio_platillo <= 0) {
+        if (platillo.precio <= 0) {
             throw new Error("El precio del platillo debe ser un número positivo");
         }
 

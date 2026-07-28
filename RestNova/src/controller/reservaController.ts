@@ -47,7 +47,7 @@ export class ReservaController{
             res.end(JSON.stringify({ mensaje : "reserva creada correctamente" }));
         } catch (error: any) {
             res.writeHead(400);
-            res.end(JSON.stringify({ mensaje : error.menssage}));
+            res.end(JSON.stringify({ mensaje : error.message}));
         }
     }
 
@@ -59,7 +59,7 @@ export class ReservaController{
             res.end(JSON.stringify({ mensaje : "reserva actualizada correctamente" }));
         } catch (error: any) {
             res.writeHead(400);
-            res.end(JSON.stringify({ mensaje : error.menssage}));
+            res.end(JSON.stringify({ mensaje : error.message}));
         }
     }
 
@@ -70,7 +70,7 @@ export class ReservaController{
             res.end(JSON.stringify({ mensaje : "reserva eliminada correctamente" }));
         } catch (error: any) {
             res.writeHead(400);
-            res.end(JSON.stringify({ mensaje : error.menssage}));
+            res.end(JSON.stringify({ mensaje : error.message}));
         }
     }
 }

@@ -57,7 +57,7 @@ export class ClienteController {
             res.end(JSON.stringify({ mensaje: "cliente actualizado correctamente"}));
         } catch (error: any) {
             res.writeHead(400);
-            res.end(JSON.stringify({mensaje : error.menssage}));
+            res.end(JSON.stringify({mensaje : error.message}));
         }
     }
 
@@ -68,7 +68,7 @@ export class ClienteController {
             res.end(JSON.stringify({mensaje : "cliente eliminado exitosamente"}));
         } catch (error: any) {
             res.writeHead(400);
-            res.end(JSON.stringify({ mensaje : error.menssage }));
+            res.end(JSON.stringify({ mensaje : error.message }));
         }
     }
 }

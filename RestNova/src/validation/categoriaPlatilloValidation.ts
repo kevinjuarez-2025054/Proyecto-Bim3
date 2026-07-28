@@ -2,7 +2,7 @@ import { CategoriaPlatilloModel } from "../models/categoriaPlatillo";
 
 export class CategoriaPlatilloValidation {
     static validate(categoriaPlatillo: CategoriaPlatilloModel): void {
-        if (!categoriaPlatillo.nombre_categoria || categoriaPlatillo.nombre_categoria.trim() === "") {
+        if (!categoriaPlatillo.categoria_platillo || categoriaPlatillo.categoria_platillo.trim() === "") {
             throw new Error("El nombre de la categoría es obligatorio");
         }
     }

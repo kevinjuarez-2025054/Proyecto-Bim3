@@ -10,7 +10,7 @@ export class PagoValidation {
             throw new Error("El monto es obligatorio y no puede ser negativo");
         }
 
-        if (!pago.fecha_pago || isNaN(pago.fecha_pago.getTime())) {
+        if (!pago.fecha_pago || pago.fecha_pago.trim() === " ") {
             throw new Error("La fecha de pago es obligatoria y debe ser una fecha válida");
         }
 

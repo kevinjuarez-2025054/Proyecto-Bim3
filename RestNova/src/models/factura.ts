@@ -1,6 +1,6 @@
 export interface Factura {
     numero_factura: number;
-    fecha: Date;
+    fecha: string;
     subtotal: number;
     iva: number;
     total: number;

@@ -39,12 +39,12 @@ create table Reserva(
 );
 
 create table CategoriaPlatillo(
-	id_categoria int primary key not null,
+	id_categoria int primary key not null auto_increment,
     categoria_platillo enum("ENTRADA","SOPA Y ENSALDA","BEBIDAS","PLATO FUERTE","ACOMPAÑAMIENTOS")
 );
 
 create table Platillo(
-	id_platillo int primary key not null,
+	id_platillo int primary key not null auto_increment,
     nombre_platillo varchar(50),
     descripcion varchar(80),
     precio decimal(5,2),
@@ -55,7 +55,7 @@ create table Platillo(
 create table Pedido(
 	numero_pedido int primary key not null auto_increment,
     fecha date,
-    estado_pedido enum("EN PROCESO","ENTREGDO"),
+    estado_pedido enum("EN PROCESO","ENTREGADO"),
     id_cliente int,
     numero_mesa int,
     id_platillo int,
@@ -678,7 +678,7 @@ delimiter $$
 
 create procedure sp_agregar_pedido(
 in p_fecha date,
-in p_estado_pedido enum('EN PROCESO','ENTREGDO'),
+in p_estado_pedido enum('EN PROCESO','ENTREGADO'),
 in p_id_cliente int,
 in p_numero_mesa int,
 in p_id_platillo int
@@ -761,15 +761,15 @@ delimiter ;
 -- datos pedido
 
 call sp_agregar_pedido('2025-02-01','EN PROCESO',1,1,1);
-call sp_agregar_pedido('2025-02-02','ENTREGDO',2,2,2);
+call sp_agregar_pedido('2025-02-02','ENTREGADO',2,2,2);
 call sp_agregar_pedido('2025-02-03','EN PROCESO',3,3,3);
-call sp_agregar_pedido('2025-02-04','ENTREGDO',4,4,4);
+call sp_agregar_pedido('2025-02-04','ENTREGADO',4,4,4);
 call sp_agregar_pedido('2025-02-05','EN PROCESO',5,5,5);
-call sp_agregar_pedido('2025-02-06','ENTREGDO',6,6,6);
+call sp_agregar_pedido('2025-02-06','ENTREGADO',6,6,6);
 call sp_agregar_pedido('2025-02-07','EN PROCESO',7,7,7);
-call sp_agregar_pedido('2025-02-08','ENTREGDO',8,8,8);
+call sp_agregar_pedido('2025-02-08','ENTREGADO',8,8,8);
 call sp_agregar_pedido('2025-02-09','EN PROCESO',9,9,9);
-call sp_agregar_pedido('2025-02-10','ENTREGDO',10,10,10);
+call sp_agregar_pedido('2025-02-10','ENTREGADO',10,10,10);
 
 -- ==========================================
 -- procedimientos almacenados tabla detallepedido
