@@ -1,9 +1,8 @@
 import { IncomingMessage, ServerResponse } from "node:http";
 import { Mesa } from "../models/mesas";
-import { ClienteService } from "../service/clienteService";
 import { MesaService } from "../service/mesaService";
 
-const service = new MesaService;
+const service = new MesaService();
 
 async function leerBody(req: IncomingMessage): Promise<any> {
     return new Promise((resolve, reject) => {
